@@ -53,13 +53,24 @@ function convert(number) {
     }
 
     // 13
-    // if (number%13 == 0) {
-    //
-    //
-    // }
+    if (number%13 == 0) {
+
+        if (strList.join("").includes("B")) {
+            pos = strList.join("").search("B")
+            console.log(pos)
+            pos = Math.floor(pos/4)
+
+            strList.splice(pos,0,"Fezz")
+
+        } else {
+            strList.push("Fezz")
+        }
+    }
+
+
 
     // 17
-    if (number%17 == 0, strList.length > 0) {
+    if (number%17 == 0) {
         strList.reverse()
     }
 
@@ -72,4 +83,7 @@ function convert(number) {
     }
 }
 
-console.log(convert(17))
+console.log(convert(3*13))
+
+// if (a, b) means if (a or b)???
+// if (number%17==0, strList.length>0), always true, why
