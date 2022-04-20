@@ -1,29 +1,34 @@
-function fizzbuzz() {
-    for (let i = 1; i <= 100; i++) {
-        outputValue = i.toString()
-
-
-
-        if (i % 5 == 0) {
-            outputValue = "Buzz"
-
-
-            if ((i / 5) % 3 == 0) {
-                outputValue = "FizzBuzz"
-                console.log(outputValue)
-                continue
-            }
-
-        }
-
-        if (i % 3 == 0) {
-            outputValue = "Fizz"
-        }
-
-        /* A liiiiitle bit quicker? */
-
-        console.log((outputValue))
-
+/*
+function multipleOrNot(number, divider) {
+    if (number%divider == 0) {
+        return [true, number/divider];
+    } else {
+        return [false, number];
     }
 }
-fizzbuzz()
+
+console.log(multipleOrNot(7,3))*/
+
+/*
+const a = "wait"
+
+const b = a + "ing"
+
+console.log(b)*/
+
+/*
+var dict = {
+    3: "Fizz",
+    5: "Buzz"
+}
+console.log(dict[3])*/
+
+var b = 1
+b += 1
+console.log(b)
+
+var array = [1,2,3]
+array.reverse()
+console.log(array)
+
+console.log(array.join(""))
