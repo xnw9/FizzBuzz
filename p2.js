@@ -19,14 +19,6 @@ multiple of 17, reverse the order in which any fizzes, buzzes, bangs etc. are pr
 
 */
 
-// multipleOrNot(7,3)
-
-/*
-for (let i = 1; i <= 100; i++) {
-
-}
-*/
-
 function convert(number) {
     var strList = []
 
@@ -83,7 +75,16 @@ function convert(number) {
     }
 }
 
-console.log(convert(3*13))
+// console.log(convert(3*13))
+
+// print everything
+for (let i = 1; i <= 300; i++) {
+    console.log(convert(i))
+}
+
+// user input
+// const userNum = prompt()
+// console.log(oncert(userNum))
 
 // if (a, b) means if (a or b)???
 // if (number%17==0, strList.length>0), always true, why

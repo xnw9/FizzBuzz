@@ -32,3 +32,16 @@ array.reverse()
 console.log(array)
 
 console.log(array.join(""))
+var a = 0
+var b = 0
+if (a==0, b==0) {
+    console.log("yes")
+}
+var strlist = []
+strlist.push(1)
+strlist.push(2)
+console.log(strlist)
+
+console.log("123"[0])
+
+console.log(Math.floor(3/4))
