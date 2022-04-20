@@ -21,49 +21,55 @@ multiple of 17, reverse the order in which any fizzes, buzzes, bangs etc. are pr
 
 // multipleOrNot(7,3)
 
+/*
 for (let i = 1; i <= 100; i++) {
+
+}
+*/
+
+function convert(number) {
     var strList = []
-    var number = i
 
     var dict = {
         3: "Fizz",
         5: "Buzz",
-        7: "Bang",
-        13: "Fezz"
+        7: "Bang"
     }
+    var dividers = [3,5,7]
 
     // 11
     if (number%11==0) {
         if (number/11%13==0) {
-            console.log("Bong")
-            continue
+            return "FezzBong"
         }
-        console.log("FezzBong")
+        return "Bong"
     }
 
-    for (divider in [3,5,7]) {
-        if (number % divider == 0) {
-            number = number / i
-            strList.push(dict[divider])
+    for (let j in dividers) {
+        if (number % dividers[j] == 0) {
+            number = number / dividers[j]
+            strList.push(dict[dividers[j]])
         }
     }
 
     // 13
-    if (number%13 == 0) {
-
-
-    }
+    // if (number%13 == 0) {
+    //
+    //
+    // }
 
     // 17
-    if (number%17 == 0) {
+    if (number%17 == 0, strList.length > 0) {
         strList.reverse()
     }
 
 
     // output
-    if (str.length == 0) {
-        console.log(i)
+    if (strList.length == 0) {
+        return number
     } else {
-        console.log(strList.join(""))
+        return strList.join("")
     }
 }
+
+console.log(convert(17))
