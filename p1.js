@@ -1,3 +1,5 @@
+// part 1
+
 function fizzbuzz() {
     for (let i = 1; i <= 100; i++) {
         outputValue = i.toString()

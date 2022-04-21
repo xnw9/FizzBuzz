@@ -1,3 +1,5 @@
+// part 2 + stretch part 1
+
 /*
 multiple of 7, print "Bang" instead of the number.
     For numbers which are multiples of 7 and 3 / 5, "append Bang"

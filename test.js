@@ -1,8 +1,7 @@
+// a messy js testing playground
+
 // if (a, b) means if (a or b)???
 // if (number%17==0, strList.length>0), always true, why
-
-
-
 
 /*
 function multipleOrNot(number, divider) {
@@ -51,3 +50,5 @@ console.log(strlist)
 console.log("123"[0])
 
 console.log(Math.floor(3/4))
+
+console.log(17%17==0)
