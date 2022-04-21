@@ -1,3 +1,9 @@
+// if (a, b) means if (a or b)???
+// if (number%17==0, strList.length>0), always true, why
+
+
+
+
 /*
 function multipleOrNot(number, divider) {
     if (number%divider == 0) {

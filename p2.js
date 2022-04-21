@@ -75,16 +75,11 @@ function convert(number) {
     }
 }
 
-// console.log(convert(3*13))
+// user input
+const userNum = prompt('Number to be converted')
+console.log(convert(userNum))
 
 // print everything
 for (let i = 1; i <= 300; i++) {
     console.log(convert(i))
 }
-
-// user input
-// const userNum = prompt()
-// console.log(oncert(userNum))
-
-// if (a, b) means if (a or b)???
-// if (number%17==0, strList.length>0), always true, why
