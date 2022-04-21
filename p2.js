@@ -25,7 +25,8 @@ function convert(number) {
     var dict = {
         3: "Fizz",
         5: "Buzz",
-        7: "Bang"
+        7: "Bang",
+        13: "Fezz"
     }
     var dividers = [3,5,7]
 
@@ -37,6 +38,7 @@ function convert(number) {
         return "Bong"
     }
 
+    // 3,5,7
     for (let j in dividers) {
         if (number % dividers[j] == 0) {
             number = number / dividers[j]
@@ -49,17 +51,14 @@ function convert(number) {
 
         if (strList.join("").includes("B")) {
             pos = strList.join("").search("B")
-            console.log(pos)
             pos = Math.floor(pos/4)
 
-            strList.splice(pos,0,"Fezz")
+            strList.splice(pos,0,"Fezz")     // better method?
 
         } else {
             strList.push("Fezz")
         }
     }
-
-
 
     // 17
     if (number%17 == 0) {
@@ -69,6 +68,10 @@ function convert(number) {
 
     // output
     if (strList.length == 0) {
+        if (number == 13) {
+            return "Fezz"
+        }
+
         return number
     } else {
         return strList.join("")
@@ -76,10 +79,18 @@ function convert(number) {
 }
 
 // user input
-const userNum = prompt('Number to be converted')
-console.log(convert(userNum))
+// const userNum = prompt('Number to be converted')
+// console.log(convert(userNum))
 
 // print everything
 for (let i = 1; i <= 300; i++) {
     console.log(convert(i))
 }
+
+/*
+next step
+
+- nvm i npm
+- npm i prompt-sync
+- var prompt = require('prompt-sync')()
+ */
