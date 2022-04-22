@@ -58,12 +58,17 @@ function convert(number) {
         let found = false
         for (let i in strList.length) {
             if ("B" in strList[i]) {        // more than 13, check if there is word starting with B
-                strList.splice(i, 0, "Fezz")     // if yes, just take its position (since that's the first one)
-                found = true        // indicating that we have inserted Fezz
+                if (i == 0) {
+                    strList = ["Fezz"].concat(strList)      // if first word has B, just combine
+                } else {
+                    strList.splice(i, 0, "Fezz")     // otherwise insert before it
+                    found = true        // indicating that we have inserted Fezz
+                }
+
                 break       // jump out of for loop
             }
         }
-        if (!found) {     // if no, append Fezz
+        if (!found) {     // if no word with B, append Fezz
             strList.push("Fezz")
         }
     }
@@ -83,18 +88,17 @@ function convert(number) {
 }
 
 // user input
-// const userNum = prompt('Number to be converted')
-// console.log(convert(userNum))
-
-// print everything
-for (let i = 1; i <= 300; i++) {
-    console.log(convert(i))
+var readlineSync = require('readline-sync');
+const userNum = readlineSync.question('Number to be converted: \n')
+console.log(convert(userNum))
+var next = userNext = readlineSync.question("Convert another one? y=yes, press any other keys to exit \n")
+while (next == "y") {
+    const userNum = readlineSync.question('Number to be converted: \n')
+    console.log(convert(userNum))
+    var next = userNext = readlineSync.question("Convert another one? y=yes, press any other keys to exit \n")
 }
 
-/*
-next step
-
-- nvm i npm
-- npm i prompt-sync
-- var prompt = require('prompt-sync')()
- */
+// print everything
+// for (let i = 1; i <= 300; i++) {
+//     console.log(convert(i))
+// }
