@@ -26,4 +26,5 @@ function fizzbuzz() {
 
     }
 }
+
 fizzbuzz()

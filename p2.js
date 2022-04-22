@@ -30,11 +30,11 @@ function convert(number) {
         7: "Bang",
         13: "Fezz"
     }
-    var dividers = [3,5,7]
+    var dividers = [3, 5, 7]
 
     // 11
-    if (number%11==0) {
-        if (number/11%13==0) {
+    if (number % 11 == 0) {
+        if (number / 11 % 13 == 0) {
             return "FezzBong"
         }
         return "Bong"
@@ -43,37 +43,39 @@ function convert(number) {
     // 3,5,7
     for (let j in dividers) {
         if (number % dividers[j] == 0) {
-            number = number / dividers[j]
+            // number = number / dividers[j]        // no need
             strList.push(dict[dividers[j]])
         }
     }
 
     // 13
-    if (number%13 == 0) {
+    if (number % 13 == 0) {
 
-        if (strList.join("").includes("B")) {
-            pos = strList.join("").search("B")
-            pos = Math.floor(pos/4)
+        if (strList.length == 0) {     // just 13, so return Fezz
+            return "Fezz"
+        }
 
-            strList.splice(pos,0,"Fezz")     // better method?
-
-        } else {
+        let found = false
+        for (let i in strList.length) {
+            if ("B" in strList[i]) {        // more than 13, check if there is word starting with B
+                strList.splice(i, 0, "Fezz")     // if yes, just take its position (since that's the first one)
+                found = true        // indicating that we have inserted Fezz
+                break       // jump out of for loop
+            }
+        }
+        if (!found) {     // if no, append Fezz
             strList.push("Fezz")
         }
     }
 
     // 17
-    if (number%17 == 0) {
+    if (number % 17 == 0) {
         strList.reverse()
     }
 
 
     // output
     if (strList.length == 0) {
-        if (number == 13) {
-            return "Fezz"
-        }
-
         return number
     } else {
         return strList.join("")
